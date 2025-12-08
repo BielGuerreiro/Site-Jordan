@@ -7,8 +7,12 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+:root {
+  --main-color: #257dd5;
+}
+
 body {
-  background-color: rgb(78, 78, 78);
+  background-color: #141418;
   overflow: hidden;
 }
 
@@ -48,8 +52,14 @@ header {
   cursor: pointer;
 }
 
+.menu a:hover {
+  color: var(--main-color);
+  transition: 0.4s;
+}
+
 .menu .selecionado {
   text-decoration: underline;
+  color: var(--main-color);
 }
 
 .menu-lateral {
@@ -57,7 +67,22 @@ header {
   justify-content: flex-end;
   padding-right: 7vh;
   margin-top: -20px;
-  gap: 30px;
+  gap: 20px;
+}
+
+.bx-shopping-bag {
+  background-color: var(--main-color);
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.bx-shopping-bag:hover,
+.bx-menu:hover {
+  transform: scale(1.1);
+}
+
+.bx-menu {
+  margin-top: 9px;
 }
 
 .menu-lateral li {
@@ -86,7 +111,7 @@ header {
 }
 
 .nome h2 {
-  color: #257dd5;
+  color: var(--main-color);
   font-size: 30px;
   font-family: "Jost", sans-serif;
   font-weight: 500;
@@ -113,12 +138,36 @@ header {
 .sapato img {
   width: 100%;
   height: auto;
+  transform-origin: bottom right;
+  animation: pisada 1.2s ease-out forwards;
+  transition: transform 0.3s ease;
+}
+
+.icones {
+  position: absolute;
+  right: 5%;
+  top: 45%;
+}
+
+.icones ul {
+  font-size: 35px;
+  display: grid;
+  gap: 40px;
+}
+
+.icones a {
+  color: white;
+  transition: 0.4s;
+}
+
+.icones a:hover {
+  color: var(--main-color);
 }
 
 footer {
   position: absolute;
   left: 13%;
-  bottom: 100px;
+  bottom: 80px;
   z-index: 5;
 }
 
@@ -137,4 +186,73 @@ footer {
 .direitos .detalhe {
   font-size: 11px;
   font-style: italic;
+}
+
+.area-preco {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  display: flex;
+  gap: 50px;
+}
+
+.preco {
+  padding: 17px 30px;
+  background-color: transparent;
+  border: 1px solid rgb(134, 134, 134);
+  color: rgb(231, 231, 231);
+  align-self: center;
+  transition: all 0.3s ease;
+}
+
+.preco:hover {
+  transform: translateX(-5px);
+}
+
+.carrinho {
+  align-self: center;
+}
+
+.carrinho a {
+  display: inline-block;
+  background-color: var(--main-color);
+  padding: 20px 30px;
+  color: white;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.carrinho a:hover {
+  color: black;
+  transform: translateX(5px);
+}
+
+@keyframes pisada {
+  0% {
+    opacity: 0;
+    transform: rotate(25deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes surgir-esquerda {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.nome h1,
+.nome h2,
+.descricao p,
+.area-preco {
+  opacity: 0;
+  animation: surgir-esquerda 3s ease forwards;
 }
