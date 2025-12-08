@@ -66,7 +66,7 @@ header {
   display: flex;
   justify-content: flex-end;
   padding-right: 7vh;
-  margin-top: -20px;
+  margin-top: -30px;
   gap: 20px;
 }
 
@@ -256,4 +256,152 @@ footer {
 .area-preco {
   opacity: 0;
   animation: surgir-esquerda 3s ease forwards;
+}
+
+/* responsivo _______________________________________________________________________________ */
+
+@media (max-width: 900px) {
+  body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #141418;
+    padding-bottom: 30px;
+  }
+
+  header {
+    height: auto;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+  }
+
+  .logo {
+    position: static;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .logo img {
+    width: 80px;
+  }
+
+  .menu ul {
+    padding-top: 0;
+    gap: 20px;
+    font-size: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu-lateral {
+    position: static;
+    margin-top: 10px;
+    padding-right: 0;
+    justify-content: center;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container-descricao {
+    order: 1;
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    margin-left: 0;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .nome {
+    padding-left: 0;
+  }
+
+  .nome h1 {
+    font-size: 40px;
+  }
+
+  .nome h2 {
+    font-size: 22px;
+  }
+
+  .sapato {
+    order: 2;
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+  }
+
+  .sapato img {
+    width: 80%;
+    max-width: 400px;
+    filter: drop-shadow(0px 10px 30px var(--main-color));
+  }
+
+  .descricao {
+    order: 3;
+    margin-top: 0;
+    padding-left: 0;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .descricao p {
+    margin: 0 auto;
+    font-size: 14px;
+  }
+
+  .area-preco {
+    order: 4;
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    margin-top: 40px;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  .icones {
+    order: 5;
+    position: relative;
+    right: auto;
+    top: auto;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .icones ul {
+    display: flex;
+    gap: 30px;
+    font-size: 30px;
+  }
+
+  footer {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .direitos p {
+    font-size: 10px;
+  }
 }
