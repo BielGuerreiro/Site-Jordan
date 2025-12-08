@@ -138,9 +138,10 @@ header {
 .sapato img {
   width: 100%;
   height: auto;
-  transform-origin: bottom right;
+  transform-origin: 100% 100%;
   animation: pisada 1.2s ease-out forwards;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
+  filter: drop-shadow(0px 20px 50px var(--main-color));
 }
 
 .icones {
@@ -230,7 +231,7 @@ footer {
 @keyframes pisada {
   0% {
     opacity: 0;
-    transform: rotate(25deg);
+    transform: rotate(45deg);
   }
   100% {
     opacity: 1;
